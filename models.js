@@ -23,3 +23,5 @@ Dog.init({
 sequelize.sync({alter: true});
 
 module.exports = {Dog};
+
+// module.exports = {Dog: Dog, Cat: Cat};

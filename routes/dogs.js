@@ -43,6 +43,12 @@ router.put('/:id', async function(req, res, next) {
     res.json(dog);
 });
 
+router.delete('/:id', async function(req, res, next) {
+    // console.log(req.body);
+    const result = await Dog.destroy({where: {id: req.params.id}});
+    res.json(result);
+});
+
 router.get('/profile/:id/name/:name', function(req, res, next) {
     // console.log(req.params);
     // look up the database for user id = 3
