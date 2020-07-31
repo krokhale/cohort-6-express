@@ -9,6 +9,40 @@ let {Dog} = require('../models');
 // PUT /dogs/1
 // DELETE /dogs/1
 
+// RESTFUL
+
+/*USER
+a user has many categories*/
+
+// CATEGORIES
+// a category has many questions
+//
+// QUESTIONS
+// a question belongs to a category
+
+// GET /categories
+// GET /categories/:id
+// POST /categories
+// PUT /categories/:id
+// DELETE /categories/:id
+
+// GET /categories/:id/questions
+
+// GET /questions?categoryId=1
+// GET /questions/:id
+// POST /questions
+// PUT /questions/:id
+// DELETE /categories/:id
+
+
+
+
+
+
+
+
+
+
 // POSTMAN
 
 /* GET users listing. */

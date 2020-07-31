@@ -20,8 +20,45 @@ Dog.init({
 });
 
 
+class Category extends Model {
+
+}
+
+Category.init({
+    name: {
+        type: DataTypes.STRING,
+        // allowNull: false
+    }
+}, {
+    sequelize, // We need to pass the connection instance
+    modelName: 'Category', // We need to choose the model name
+});
+
+class Question extends Model {
+
+}
+
+Question.init({
+    text: {
+        type: DataTypes.STRING,
+        // allowNull: false
+    },
+    answer: {
+        // type: DataTypes.STRING,
+        type: 'LONGTEXT',
+        // allowNull: false
+    }
+}, {
+    sequelize, // We need to pass the connection instance
+    modelName: 'Question', // We need to choose the model name
+});
+
+Category.hasMany(Question, { foreignKey: 'categoryId' });
+Question.belongsTo(Category, { foreignKey: 'categoryId' });
+
+
 sequelize.sync({alter: true});
 
-module.exports = {Dog};
+module.exports = {Dog, Category, Question};
 
 // module.exports = {Dog: Dog, Cat: Cat};
