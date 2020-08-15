@@ -3,6 +3,14 @@ var router = express.Router();
 
 let {Dog} = require('../models');
 
+// RESTful APIs
+// Dog, User, Order
+// Create
+// Read
+// Update
+// Delete
+
+
 // GET /dogs
 // GET /dogs/1
 // POST /dogs
@@ -40,14 +48,17 @@ a user has many categories*/
 
 
 
-
+// GET /dogs
+// GET /dogs/1
+// POST /dogs
+// PUT /dogs/1
+// DELETE /dogs/1
 
 
 // POSTMAN
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
-    // const jane = await Dog.create({ firstName: "Jack", lastName: "Doe" });
     let dogs = await Dog.findAll();
     console.log(dogs)
     res.json(dogs);

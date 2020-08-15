@@ -1,6 +1,32 @@
 const {Sequelize, DataTypes, Model} = require('sequelize');
 const {sequelize} = require('./db');
 
+
+class AppUser extends Model {
+
+}
+
+AppUser.init({
+    firstName: {
+        type: DataTypes.STRING,
+        // allowNull: false
+    },
+    lastName: {
+        type: DataTypes.STRING,
+        // allowNull: false
+    },
+    hashPassword: {
+        type: DataTypes.STRING,
+        // allowNull: false
+    },
+    email: {
+        type: DataTypes.STRING
+    }
+}, {
+    sequelize, // We need to pass the connection instance
+    modelName: 'AppUser', // We need to choose the model name
+});
+
 class Dog extends Model {
 
 }
@@ -59,6 +85,6 @@ Question.belongsTo(Category, { foreignKey: 'categoryId' });
 
 sequelize.sync({alter: true});
 
-module.exports = {Dog, Category, Question};
+module.exports = {Dog, Category, Question, AppUser};
 
 // module.exports = {Dog: Dog, Cat: Cat};
